@@ -15,17 +15,26 @@ function signOut() {
     });
 }
 
+$(document).ready(function() {
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#dataTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
 $("#dataTable").ready(function () {
-    var tabel = document.getElementById("dataTable")
+    var tabel = document.getElementById("dataTable");
     getAll().then(response => {
         console.log(response)
         for(var i = 0; i <response.length; i++){
-            const tr = tabel.insertRow()
+            const tr = tabel.insertRow();
             const td1 = tr.insertCell();
             const td2 = tr.insertCell();
             const td3 = tr.insertCell();
             const td4 = tr.insertCell();
-            const td5 = tr.insertCell();
+            const td5 = tr.insertCell(); 
             console.log(response[i])
             td1.innerHTML = response[i].id
             td2.innerHTML = response[i].nama

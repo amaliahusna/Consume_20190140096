@@ -62,8 +62,10 @@
             headers:{ "Content-Type": "application/json" }
         })
         .then((result) => {
+          window.location.href="/viewdata.html"
             console.log("Data Berhasil Disimpan")
-            .href ="/viewdata.html"   
+            
+             
         }).catch((err) => {
             console.log(error)
         });

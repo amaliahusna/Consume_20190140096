@@ -4,6 +4,12 @@ function getAll(){
     return dr
 }
 
+function getById(minumanId){
+    const respon = axios.get("http://localhost:8089/dataminuman/minuman")
+    const dr = respon.then(resp => resp.data, minumanId);
+    return dr
+}
+
 async function create(data){
     await axios.post("http://localhost:8089/dataminuman/minuman", data)
     .then((result) => {
@@ -25,7 +31,7 @@ async function update(data){
 }
 
 async function del(data){
-    await axios.delete("http://localhost:8089/dataminuman/minuman", data)
+    await axios.delete("http://localhost:8089/dataminuman/", data)
     .then((result) => {
         console.log(result)
         return result.data
