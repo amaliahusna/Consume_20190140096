@@ -41,8 +41,8 @@ $("#dataTable").ready(function () {
             td3.innerHTML = response[i].jenis
             td4.innerHTML = response[i].harga
             td5.innerHTML = `<div class ="justify content-center">
-            <a class="btn ms-2" style="background-color: #858ab3; border:none;" href="updateData.html?id=${response[i].id}">Edit</a>
-            <button type ="button" class="btn ms-2" style="background-color: #858ab3; border:none;" onclick="del(${response[i].id});">Delete</button>
+            <a class="btn ms-2" style="background-color: #54b5f5; border:none;" href="updateData.html?id=${response[i].id}">Edit</a>
+            <button type ="button" class="btn ms-2" style="background-color: #54b5f5; border:none;" onclick="del(${response[i].id});">Delete</button>
             </div>`
             }
         }
